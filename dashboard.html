@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard | Finance Companion</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">Finance Companion</div>
+  <nav>
+    <a href="dashboard.html" class="active">Dashboard</a>
+    <a href="education.html">Learn</a>
+    <a href="profile.html">Profile</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h2>Welcome to Your Dashboard</h2>
+  <p class="subtitle">
+    Manage your salary, expenses & savings from one place.
+  </p>
+
+  <div class="dashboard-grid">
+
+    <div class="feature-card" onclick="goToSalary()">
+      <h3>💰 Salary Breakdown</h3>
+      <p>Understand CTC, tax & in-hand salary</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>📊 Budget Planner</h3>
+      <p>Track monthly expenses (Coming soon)</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>🏦 Savings Planner</h3>
+      <p>Emergency fund & goals</p>
+    </div>
+
+    <div class="feature-card" onclick="location.href='education.html'">
+      <h3>📚 Financial Education</h3>
+      <p>Learn finance from basics to advanced</p>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <p>Educational project · Not financial advice</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  checkAuth();
+</script>
+
+</body>
+</html>
