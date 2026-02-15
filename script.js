@@ -19,6 +19,11 @@ function toggleForm(forceMode = null) {
   const nameField = document.getElementById("name");
   const toggleText = document.getElementById("toggle-text");
 
+  // Guard for pages that include script.js but do not have auth form elements
+  if (!formTitle || !mainButton || !nameField || !toggleText) {
+    return;
+  }
+
   const extraFields = [
     "college",
     "company",
@@ -153,6 +158,10 @@ function logout() {
   window.location.href = "login.html";
 }
 
+function goToSalary() {
+  alert("Salary Breakdown is coming soon.");
+}
+
 /* =========================
    PROFILE SAVE (BACKEND)
 ========================= */
@@ -198,5 +207,7 @@ async function saveProfile(e) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  toggleForm(true);
+  if (document.getElementById("form-title")) {
+    toggleForm(true);
+  }
 });
